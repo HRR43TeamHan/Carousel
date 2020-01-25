@@ -24,13 +24,15 @@
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
-    "eslint-config-hackreactor": "github:hackreactor-labs/eslint-config-hackreactor",
+    "eslint-config-hackreactor": "github:reactorcore/eslint-config-hackreactor",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "faker": "^4.1.0",
     "mysql": "^2.18.1",
+    "nodemon": "^2.0.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   }
