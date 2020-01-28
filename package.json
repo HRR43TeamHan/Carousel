@@ -6,7 +6,9 @@
   "scripts": {
     "webpack": "webpack --watch",
     "start": "node server/index.js",
-    "devstart": "nodemon server/index.js"
+    "devstart": "nodemon server/index.js",
+    "test": "jest",
+    "seed": "node db/seeder.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,7 @@
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
-    "eslint-config-hackreactor": "github:reactorcore/eslint-config-hackreactor",
+
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
