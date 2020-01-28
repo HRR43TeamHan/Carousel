@@ -28,7 +28,7 @@ jobs:
 
       - run:
           name: update-npm
-          command: 'sudo npm install -g npm@6.13.6'
+          command: 'sudo npm install -g npm@latest'
 
       - save_cache:
           paths:
@@ -36,4 +36,6 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      - run:
+          name: test
+          command: npm test
