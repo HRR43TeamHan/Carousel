@@ -7,4 +7,18 @@ const connection = mysql.createConnection({
 })
 connection.connect();
 
-module.exports = connection;
+const getPhotos = (id) => {
+  return new Promise((resolve, reject) => {
+    connection.query('SELECT * FROM media WHERE room_name=?', id, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    })
+  })
+}
+module.exports = {
+  connection: connection,
+  getPhotos: getPhotos
+}
