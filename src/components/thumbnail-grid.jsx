@@ -4,29 +4,19 @@ import {
   PhotoGrid
 } from '../CSS/thumbnail-galleryCSS.js'
 
-const ThumbnailGrid = () => {
+const ThumbnailGrid = ({images, handleClick}) => {
   return (
     <PhotoGrid>
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
-      <Thumbnail />
+      {
+        images.map((images, i) => {
+          return <Thumbnail
+          key= {images.id}
+          index= {i}
+          imgUrl= {images.img_url}
+          handleClick={handleClick}
+          />
+        })
+      }
     </PhotoGrid>
   )
 }

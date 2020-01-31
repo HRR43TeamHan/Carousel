@@ -27,11 +27,22 @@ export const PhotoGrid = styled.div({
 export const PhotoMain = styled.div({
   height: '70%',
   width: "100%",
-  background: 'black'
+  background: 'black',
+  position: 'relative'
 })
 
 export const PhotoThumbnail = styled.div({
   height: '50%',
   width: '10%',
   background: 'red'
+})
+
+export const ActivePhoto = styled.img({
+  width: '100%',
+  height: '100%'
+})
+
+export const PhotoSmallBox = styled.img({
+  width: '100%',
+  height: '100%'
 })

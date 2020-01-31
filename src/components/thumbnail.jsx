@@ -1,11 +1,16 @@
 import React from 'react';
 import {
-  PhotoThumbnail
+  PhotoThumbnail,
+  PhotoSmallBox
 } from '../CSS/thumbnail-galleryCSS.js'
 
-const Thumbnail = () => {
+const Thumbnail = ({imgUrl, handleClick, index}) => {
   return (
-    <PhotoThumbnail>Thumbnail!</PhotoThumbnail>
+    <PhotoThumbnail>
+      <PhotoSmallBox src={imgUrl} onClick={handleClick} data-index={index}>
+
+      </PhotoSmallBox>
+    </PhotoThumbnail>
   )
 
 }

@@ -2,6 +2,8 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.jsx',
+  mode: 'development',
+  watch: true,
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
@@ -9,14 +11,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: [/\.jsx$/],
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-react']
-          }
-        }
+        loader: 'babel-loader'
       }
     ]
   }
