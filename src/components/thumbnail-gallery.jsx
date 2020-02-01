@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import ThumbnailGrid from './thumbnail-grid.jsx'
-import ThumbnailMain from './thumbnail-main.jsx'
+import ThumbnailGrid from './thumbnail-grid.jsx';
+import ThumbnailMain from './thumbnail-main.jsx';
+import RGalleryGrid from './rightGalleryGrid.jsx';
+// import RightThumbnail from './rightGallery-thumbnail.jsx';
+
 
 import {
   PhotoGallery,
@@ -53,18 +56,16 @@ export default class Thumbnail extends Component {
     return(
       <PhotoGallery>
 
-
-
         {/* Left Side */}
         <LeftContainer>
           {this.renderThumbnails()}
-          {/* <ThumbnailMain /> */}
+
           <ThumbnailGrid images={images} handleClick={this.handleClick} />
         </LeftContainer>
 
         {/* Right Side */}
         <RightContainer>
-          right
+          <RGalleryGrid />
         </RightContainer>
       </PhotoGallery>
     )

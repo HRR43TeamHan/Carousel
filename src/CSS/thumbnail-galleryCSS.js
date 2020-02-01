@@ -19,22 +19,21 @@ export const RightContainer = styled.div({
 export const PhotoGrid = styled.div({
   height: '30%',
   width: '100%',
-  background: 'yellow',
   display: 'flex',
-  flexWrap: 'wrap'
+  flexWrap: 'wrap',
+  'justify-content': 'space-around'
 });
 
 export const PhotoMain = styled.div({
-  height: '70%',
-  width: "100%",
-  background: 'black',
+  height: '69.7%',
+  width: "99.7%",
+  padding: '.15%',
   position: 'relative'
 })
 
 export const PhotoThumbnail = styled.div({
-  height: '50%',
-  width: '10%',
-  background: 'red'
+  height: '49.2%',
+  width: '9.7%'
 })
 
 export const ActivePhoto = styled.img({
@@ -44,5 +43,22 @@ export const ActivePhoto = styled.img({
 
 export const PhotoSmallBox = styled.img({
   width: '100%',
-  height: '100%'
+  height: '100%',
+})
+
+export const RPhotoGrid = styled.div({
+  width: '100%',
+  height: '100%',
+  background: 'yellow',
+  display: 'flex',
+  flexWrap: 'wrap',
+  'justify-content': 'space-between'
+
+})
+
+export const RPhoto = styled.div({
+  height: '33.10%',
+  width: '99.7%',
+  background: 'red'
+
 })
