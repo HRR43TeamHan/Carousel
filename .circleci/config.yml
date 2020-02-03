@@ -30,6 +30,10 @@ jobs:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
 
+      - run:
+          name: npm-install
+          command: npm install
+
       - save_cache:
           paths:
             - node_modules
