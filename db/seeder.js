@@ -1,6 +1,6 @@
 const faker = require('faker');
 const path = require('path');
-const connection = require('./index.js');
+const db = require('./index.js');
 const Promise = require('bluebird');
 
 const imgUrl = 'https://hrr43teamhan.s3-us-west-1.amazonaws.com/'
@@ -19,7 +19,7 @@ generateRandomNum = (min, max) => {
 let tags = ['Favorites', 'Dining', 'Room/Suite']
 
 let insert = (param) => {
-  connection.query(`INSERT INTO media (room_name, img_url, img_description, tag) VALUES (?, ?, ?, ?)`, param, (err, result) => {
+  db.connection.query(`INSERT INTO media (room_name, img_url, img_description, tag) VALUES (?, ?, ?, ?)`, param, (err, result) => {
     if (err) {
       console.log(`Error inserting planet with id of ${id}`)
       // console.log(`${id}, ${randomImg}`);
@@ -33,10 +33,10 @@ let insert = (param) => {
 let insertAsync = Promise.promisify(insert)
 
 
-  for (let instance = 1; instance <= 10; instance++) {
-    for (let imgs = 1; imgs <= 10; imgs++) {
+  for (let instance = 1; instance <= 100; instance++) {
+    for (let imgs = 1; imgs <= 20; imgs++) {
       let randomTag = tags[generateRandomNum(0, 2)]
-      let randomImg = imgUrl + generateRandomNum(1, 10) + '.jpg'
+      let randomImg = imgUrl + generateRandomNum(1, 50) + '.jpg'
       let randomDesc = faker.lorem.sentence()
       insertAsync([instance, randomImg, randomDesc, randomTag]);
     }

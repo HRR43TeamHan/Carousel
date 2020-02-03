@@ -25,7 +25,9 @@
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
+    "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-emotion": "^10.0.27",
     "bluebird": "^3.7.2",
     "jest": "^25.1.0",
     "nodemon": "^2.0.2",
@@ -33,6 +35,10 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.27",
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
+    "emotion": "^10.0.27",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "mysql": "^2.18.1",
