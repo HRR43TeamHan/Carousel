@@ -2,21 +2,23 @@ import React from 'react';
 
 import {
   PhotoMain,
-  ActivePhoto
+  ActivePhoto,
+  LeftChevron,
+  RightChevron
 } from '../CSS/thumbnail-galleryCSS.js'
 
-const ThumbnailMain = ({ activeThumbnail }) => {
+const ThumbnailMain = ({ activeThumbnail, handleLeftChevron, handleRightChevron }) => {
   return (
     <PhotoMain>
-      <ActivePhoto src={activeThumbnail.img_url}>
+      <ActivePhoto css={{
+          'background-image': `url("${activeThumbnail.img_url}")`,
+          'background-size': 'cover',
+          'background-position': '50% 50%',
+      }}>
 
-      {/* <img src={activeThumbnail.img_url}
-      // style={{
-        //   width: '100%',
-        //   height: '100%'
-        // }}
-        /> */}
         </ActivePhoto>
+      <RightChevron onClick={handleRightChevron}><i className="fas fa-chevron-right"></i></RightChevron>
+      <LeftChevron onClick={handleLeftChevron}><i className="fas fa-chevron-left"></i></LeftChevron>
     </PhotoMain>
   )
 }

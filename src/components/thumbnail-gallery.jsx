@@ -8,7 +8,7 @@ import RGalleryGrid from './rightGalleryGrid.jsx';
 import {
   PhotoGallery,
   LeftContainer,
-  RightContainer
+  RightContainer,
 } from '../CSS/thumbnail-galleryCSS.js'
 
 
@@ -17,9 +17,12 @@ export default class Thumbnail extends Component {
     super(props);
     this.state = {
       images: [],
-      activeIndex: 0
+      activeIndex: 0,
     }
     this.handleClick = this.handleClick.bind(this);
+    this.handleLeftChevron = this.handleLeftChevron.bind(this);
+    this.handleRightChevron = this.handleRightChevron.bind(this);
+
   }
 
   componentDidMount() {
@@ -37,30 +40,63 @@ export default class Thumbnail extends Component {
     })
   }
 
-  renderThumbnails() {
-    const { images, activeIndex } = this.state
-    if (images.length) {
-      return (
-        <ThumbnailMain activeThumbnail= {images[activeIndex]} />
-      )
-    }
-  }
-
   handleClick(e) {
     const newActiveIndex = e.target.getAttribute('data-index')
     this.setState({activeIndex:newActiveIndex})
   }
+
+  handleLeftChevron() {
+    const {activeIndex} = this.state
+    let i;
+    if (Number(activeIndex) === 0) {
+      i = 19;
+    } else {
+      i = Number(activeIndex) - 1;
+    }
+    this.setState({activeIndex: i});
+  }
+
+  handleRightChevron() {
+    const {activeIndex} = this.state
+    let i;
+    if (Number(activeIndex) === 19) {
+      i = 0;
+    } else {
+      i = Number(activeIndex) + 1;
+    }
+    this.setState({activeIndex: i});
+  }
+
+  renderThumbnails() {
+    const { images, activeIndex } = this.state
+    if (images.length) {
+      return (
+        <ThumbnailMain handleLeftChevron={this.handleLeftChevron} handleRightChevron={this.handleRightChevron} activeThumbnail= {images[activeIndex]}></ThumbnailMain>
+      )
+    }
+  }
+
 
   render() {
     const { images } = this.state
     return(
       <PhotoGallery>
 
+
+
         {/* Left Side */}
         <LeftContainer>
+
           {this.renderThumbnails()}
 
-          <ThumbnailGrid images={images} handleClick={this.handleClick} />
+
+
+
+          <ThumbnailGrid
+          images={images}
+          handleClick={this.handleClick}
+          activeIndex={Number(this.state.activeIndex)}
+          />
         </LeftContainer>
 
         {/* Right Side */}

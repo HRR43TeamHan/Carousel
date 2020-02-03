@@ -4,7 +4,7 @@ import {
   PhotoGrid
 } from '../CSS/thumbnail-galleryCSS.js'
 
-const ThumbnailGrid = ({images, handleClick}) => {
+const ThumbnailGrid = ({images, handleClick, activeIndex}) => {
   return (
     <PhotoGrid>
       {
@@ -14,6 +14,7 @@ const ThumbnailGrid = ({images, handleClick}) => {
           index= {i}
           imgUrl= {images.img_url}
           handleClick={handleClick}
+          activeIndex={activeIndex}
           />
         })
       }
