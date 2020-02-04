@@ -1,4 +1,8 @@
 const thumbnailGallery = require('../src/components/thumbnail-gallery.jsx')
+import {configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({adapter: new Adapter() });
 
 describe('thumbnail-gallery', () => {
   test('should have a state', () => {
