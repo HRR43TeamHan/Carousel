@@ -1,4 +1,4 @@
-const thumbnailGallery require('../src/components/thumbnail-gallery.jsx')
+const thumbnailGallery = require('../src/components/thumbnail-gallery.jsx')
 
 describe('thumbnail-gallery', () => {
   test('should have a state', () => {
