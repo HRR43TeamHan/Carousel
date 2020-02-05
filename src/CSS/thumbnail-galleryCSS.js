@@ -39,13 +39,33 @@ export const PhotoThumbnail = styled.div({
 export const ActivePhoto = styled.div({
   width: '100%',
   height: '100%',
-  display: 'flex'
+  display: 'flex',
+  cursor: 'pointer',
+  ':hover': {
+    filter: 'brightness(120%)',
+    transition: '0.4s ease-in'
+  },
+  '.fa-expand-alt': {
+    color: 'white',
+    position: 'absolute',
+    top: '0',
+    right: '0',
+    bottom: '0',
+    left: '0',
+    fontSize: '25px',
+    alignItems: 'center'
+  }
+
 })
 
 export const PhotoSmallBox = styled.img({
   width: '100%',
   height: '100%',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  ':hover': {
+    filter: 'brightness(100%)',
+    transition: '0.3s'
+  }
 })
 
 export const RPhotoGrid = styled.div({
@@ -106,4 +126,14 @@ export const LeftChevron = styled.div({
   ':hover': {
     backgroundColor: 'rgba(0, 0, 0, 0.50)'
   }
+})
+
+export const Fullsize = styled.div({
+  display: 'flex',
+  fontSize: '2rem',
+  // justifyContent: 'center',
+  alignItems: 'center',
+  position: 'absolute',
+  top: '50%',
+  left: '50%'
 })

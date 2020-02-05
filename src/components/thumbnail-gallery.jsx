@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ThumbnailGrid from './thumbnail-grid.jsx';
 import ThumbnailMain from './thumbnail-main.jsx';
 import RGalleryGrid from './rightGalleryGrid.jsx';
+import Modal from './modal.jsx';
 // import RightThumbnail from './rightGallery-thumbnail.jsx';
 
 
@@ -18,11 +19,12 @@ export default class Thumbnail extends Component {
     this.state = {
       images: [],
       activeIndex: 0,
+      modal: false
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleLeftChevron = this.handleLeftChevron.bind(this);
     this.handleRightChevron = this.handleRightChevron.bind(this);
-
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   componentDidMount() {
@@ -67,11 +69,17 @@ export default class Thumbnail extends Component {
     this.setState({activeIndex: i});
   }
 
+  toggleModal() {
+    this.setState(state => ({
+      modal: !state.modal
+    }))
+  }
+
   renderThumbnails() {
     const { images, activeIndex } = this.state
     if (images.length) {
       return (
-        <ThumbnailMain handleLeftChevron={this.handleLeftChevron} handleRightChevron={this.handleRightChevron} activeThumbnail= {images[activeIndex]}></ThumbnailMain>
+        <ThumbnailMain toggleModal={this.toggleModal} handleLeftChevron={this.handleLeftChevron} handleRightChevron={this.handleRightChevron} activeThumbnail= {images[activeIndex]}></ThumbnailMain>
       )
     }
   }
@@ -80,6 +88,8 @@ export default class Thumbnail extends Component {
   render() {
     const { images } = this.state
     return(
+      <div>
+        {this.state.modal && <Modal toggleModal={this.toggleModal}/>}
       <PhotoGallery>
 
 
@@ -104,6 +114,7 @@ export default class Thumbnail extends Component {
           <RGalleryGrid />
         </RightContainer>
       </PhotoGallery>
+      </div>
     )
   }
 }

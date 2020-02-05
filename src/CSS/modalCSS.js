@@ -18,7 +18,8 @@ export const ModalContainer = styled.div({
   width: 'auto',
   backgroundColor: 'rgba(0,0,0,0.5)',
   display: 'flex',
-  'flex-wrap': 'wrap'
+  'flex-wrap': 'wrap',
+  'z-index': '9'
 })
 
 export const LModalContainer = styled.div({
@@ -44,7 +45,8 @@ export const ExitButton = styled.div({
   top: '0',
   right: '0',
   position: 'absolute',
-  '& i': {
+  cursor: 'pointer',
+  '.fa-times': {
     color: '#00a680',
     fontSize: '32px',
     lineHeight: '48px'

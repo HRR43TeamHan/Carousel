@@ -8,7 +8,7 @@ import {
   ExitButton
 } from '../CSS/modalCSS.js'
 
-const Modal = () => {
+const Modal = ({toggleModal}) => {
   return (
     <ModalContainer>
     <ModalNavBar>
@@ -16,11 +16,13 @@ const Modal = () => {
         <li>duck</li>
         <li>duck</li>
 
-        <ExitButton><i class="fas fa-times"></i></ExitButton>
+        <ExitButton onClick={toggleModal}><i className="fas fa-times"></i></ExitButton>
     </ModalNavBar>
       {/* left container */}
     <CarouselContainer>
-      <LModalContainer></LModalContainer>
+      <LModalContainer>
+
+      </LModalContainer>
       <RModalContainer></RModalContainer>
     </CarouselContainer>
     </ModalContainer>
