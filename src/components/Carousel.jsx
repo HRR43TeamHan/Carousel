@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ThumbnailGallery from './thumbnail-gallery.jsx'
+import Modal from './modal.jsx'
 
 export default class Carousel extends Component {
   constructor(props) {
@@ -11,7 +12,9 @@ export default class Carousel extends Component {
     return(
       <div>
         <ThumbnailGallery />
+        <Modal />
       </div>
+
     )
   }
 }
