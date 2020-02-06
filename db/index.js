@@ -1,9 +1,10 @@
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-  user: 'student',
-  password: 'student',
-  database: 'carousel'
+  host: process.env.RDS_HOST || 'localhost',
+  user: process.env.RDS_USERNAME || 'root',
+  password: process.env.RDS_PASSWORD || undefined,
+  database: 'HRR43_FEC'
 })
 connection.connect(function(err) {
   if (err) {
@@ -15,7 +16,7 @@ connection.connect(function(err) {
 
 const getPhotos = (id) => {
   return new Promise((resolve, reject) => {
-    connection.query('SELECT * FROM media WHERE room_name=?', [id], (err, data) => {
+    connection.query('SELECT * FROM carousel WHERE room_name=?', [id], (err, data) => {
       if (err) {
         reject(err);
       } else {

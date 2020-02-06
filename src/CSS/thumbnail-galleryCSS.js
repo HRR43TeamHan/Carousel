@@ -21,7 +21,7 @@ export const PhotoGrid = styled.div({
   width: '100%',
   display: 'flex',
   flexWrap: 'wrap',
-  'justify-content': 'space-around'
+  justifyContent: 'space-around'
 });
 
 export const PhotoMain = styled.div({
@@ -39,13 +39,33 @@ export const PhotoThumbnail = styled.div({
 export const ActivePhoto = styled.div({
   width: '100%',
   height: '100%',
-  display: 'flex'
+  display: 'flex',
+  cursor: 'pointer',
+  ':hover': {
+    filter: 'brightness(120%)',
+    transition: '0.4s ease-in'
+  },
+  '.fa-expand-alt': {
+    color: 'white',
+    position: 'absolute',
+    top: '0',
+    right: '0',
+    bottom: '0',
+    left: '0',
+    fontSize: '25px',
+    alignItems: 'center'
+  }
+
 })
 
 export const PhotoSmallBox = styled.img({
   width: '100%',
   height: '100%',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  ':hover': {
+    filter: 'brightness(100%)',
+    transition: '0.3s'
+  }
 })
 
 export const RPhotoGrid = styled.div({
@@ -53,7 +73,7 @@ export const RPhotoGrid = styled.div({
   height: '100%',
   display: 'flex',
   flexWrap: 'wrap',
-  'justify-content': 'space-between'
+  justifyContent: 'space-between'
 
 })
 
@@ -66,7 +86,7 @@ export const RPhoto = styled.img({
 
 export const RightChevron = styled.div({
     display: 'flex',
-    'font-size': '2rem',
+    fontSize: '2rem',
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
@@ -88,7 +108,7 @@ export const RightChevron = styled.div({
 
 export const LeftChevron = styled.div({
   display: 'flex',
-  'font-size': '2rem',
+  fontSize: '2rem',
   justifyContent: 'center',
   alignItems: 'center',
   position: 'absolute',

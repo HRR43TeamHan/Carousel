@@ -12,9 +12,9 @@ const Thumbnail = ({imgUrl, handleClick, index, activeIndex}) => {
       onClick={handleClick}
       data-index={index}
       css={{
-          'background-image': `url("${imgUrl}")`,
-          'background-size': 'cover',
-          'background-position': '50% 50%',
+          backgroundImage: `url("${imgUrl}")`,
+          backgroundSize: 'cover',
+          backgroundPosition: '50% 50%',
            filter:`${activeIndex === index ? 'brightness(100%)' : 'brightness(50%)'}`}} >
 
       </PhotoSmallBox>
