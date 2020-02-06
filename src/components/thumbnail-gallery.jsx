@@ -30,7 +30,7 @@ export default class Thumbnail extends Component {
   componentDidMount() {
     let url = window.location.pathname.split('/');
     let id = url[1];
-    fetch(`http://127.0.0.1:3001/api/carousel/${id}`)
+    fetch(`/api/carousel/${id}`)
     .then((data) => {
       data = data.json();
       console.log(data);

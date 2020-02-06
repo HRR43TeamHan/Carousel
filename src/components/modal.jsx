@@ -12,9 +12,9 @@ const Modal = ({toggleModal}) => {
   return (
     <ModalContainer>
     <ModalNavBar>
-        <li>duck</li>
-        <li>duck</li>
-        <li>duck</li>
+        <li>TODO: TAG</li>
+        <li>TODO: TAG</li>
+        <li>TODO: TAG</li>
 
         <ExitButton onClick={toggleModal}><i className="fas fa-times"></i></ExitButton>
     </ModalNavBar>

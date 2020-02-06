@@ -21,7 +21,7 @@ export const PhotoGrid = styled.div({
   width: '100%',
   display: 'flex',
   flexWrap: 'wrap',
-  'justify-content': 'space-around'
+  justifyContent: 'space-around'
 });
 
 export const PhotoMain = styled.div({
@@ -73,7 +73,7 @@ export const RPhotoGrid = styled.div({
   height: '100%',
   display: 'flex',
   flexWrap: 'wrap',
-  'justify-content': 'space-between'
+  justifyContent: 'space-between'
 
 })
 
@@ -86,7 +86,7 @@ export const RPhoto = styled.img({
 
 export const RightChevron = styled.div({
     display: 'flex',
-    'font-size': '2rem',
+    fontSize: '2rem',
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
@@ -108,7 +108,7 @@ export const RightChevron = styled.div({
 
 export const LeftChevron = styled.div({
   display: 'flex',
-  'font-size': '2rem',
+  fontSize: '2rem',
   justifyContent: 'center',
   alignItems: 'center',
   position: 'absolute',
@@ -126,14 +126,4 @@ export const LeftChevron = styled.div({
   ':hover': {
     backgroundColor: 'rgba(0, 0, 0, 0.50)'
   }
-})
-
-export const Fullsize = styled.div({
-  display: 'flex',
-  fontSize: '2rem',
-  // justifyContent: 'center',
-  alignItems: 'center',
-  position: 'absolute',
-  top: '50%',
-  left: '50%'
 })

@@ -18,8 +18,8 @@ export const ModalContainer = styled.div({
   width: 'auto',
   backgroundColor: 'rgba(0,0,0,0.5)',
   display: 'flex',
-  'flex-wrap': 'wrap',
-  'z-index': '9'
+  flexWrap: 'wrap',
+  zIndex: '9'
 })
 
 export const LModalContainer = styled.div({
