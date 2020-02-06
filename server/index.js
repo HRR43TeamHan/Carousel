@@ -22,4 +22,4 @@ app.get('/api/carousel/:id', (req, res) => {
 
 
 
-app.listen(process.env.PORT || 50001, console.log(`Listening on port ${process.env.PORT || 50001}`))
+app.listen(process.env.PORT || 50002, console.log(`Listening on port ${process.env.PORT || 50002}`))
