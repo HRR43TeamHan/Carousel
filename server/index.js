@@ -3,9 +3,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const db = require('../db/index.js');
 
-app.use('/:id', express.static('./public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/bundle.js', express.static(`${__dirname}/../public/bundle.js`));
+// app.use('/:id', express.static('./public'));
 
 app.get('/api/carousel/:id', (req, res) => {
   db.getPhotos(req.params.id)
