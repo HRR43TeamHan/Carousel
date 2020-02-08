@@ -24,7 +24,7 @@ export const ModalContainer = styled.div({
 
 export const LModalContainer = styled.div({
   flex: '3',
-  backgroundColor: 'red'
+  backgroundColor: 'grey'
 })
 
 export const RModalContainer = styled.div({
