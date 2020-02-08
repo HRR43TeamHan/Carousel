@@ -29,7 +29,7 @@ export const LModalContainer = styled.div({
 
 export const RModalContainer = styled.div({
   flex: '1',
-  backgroundColor: 'yellow'
+  backgroundColor: 'white'
 })
 
 export const CarouselContainer = styled.div({

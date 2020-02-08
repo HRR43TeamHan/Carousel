@@ -85,11 +85,13 @@ export default class Thumbnail extends Component {
   }
 
 
+
+
   render() {
-    const { images } = this.state
+    const { images, activeIndex} = this.state
     return(
       <div>
-        {this.state.modal && <Modal toggleModal={this.toggleModal}/>}
+        {this.state.modal && <Modal activeThumbnail={images[activeIndex]} handleLeftChevron={this.handleLeftChevron} handleRightChevron={this.handleRightChevron} toggleModal={this.toggleModal}/>}
       <PhotoGallery>
 
 
