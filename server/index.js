@@ -7,6 +7,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/bundle.js', express.static(`${__dirname}/../public/bundle.js`));
 // app.use('/:id', express.static('./public'));
+app.use('/:id', express.static(__dirname + '/../public'));
 
 app.get('/api/carousel/:id', (req, res) => {
   db.getPhotos(req.params.id)
